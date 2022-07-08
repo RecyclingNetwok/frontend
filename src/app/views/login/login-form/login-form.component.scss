@@ -1,0 +1,86 @@
+.full-width {
+  width: 100%;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  border-radius: 1rem;
+  box-shadow: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.mat{
+  &-option,
+  &-form-field,
+  &-card-header,
+  &-card-footer,
+  &-checkbox,
+  &-raised-button{
+    font-family: 'Poppins';
+  }
+  &-card-header,
+  &-card-footer{
+    margin: 1.4rem 0;
+  }
+  &-card-header{
+    .mat-card-subtitle{
+      line-height: 1.4rem;
+    }
+  }
+  &-card-footer{
+    font-size: .86rem;
+    text-align: center;
+    margin: .5rem 16px;
+    .mat-card-subtitle{
+      line-height: .7rem;
+      a{color: green;}
+    }
+  }
+
+  &-card{
+    background-color: transparent;
+    &-content{
+      margin: 0 16px;
+    }
+  }
+  &-form-field{
+    margin: .1rem 0;
+    font-size: .86rem;
+  }
+  &-card-title{
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+  &-raised-button{
+    margin: 16px;
+    font-weight: 700;
+    box-shadow: none;
+    padding: .1rem 1rem;
+    border-radius: 28px;
+    background-color: rgb(22, 210, 22);
+  }
+}
+
+.scroll-container {
+  position: relative;
+}
+
+.scrollable-content {
+  padding: 16px;
+  margin: 0;
+}

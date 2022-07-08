@@ -1,0 +1,57 @@
+h1{
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: bolder;
+}
+
+.team{
+    display: flex;
+    margin: 0 2.4rem;
+    align-items: center;
+    justify-content: center;
+    &-member{
+        display: block;
+        margin: 1.4rem;
+        .imgWrapper{
+            display: flex;
+            overflow: hidden;
+            padding-top: 4rem;
+            border-radius: 14px;
+            background-color: #fcfcf7;
+            position: relative;
+            height: max-content;
+            margin-bottom: 0 !important;
+            .member-img{
+                width: 100%;
+                vertical-align: baseline;
+                background-size: cover;
+                transition: all .3s;
+            }
+        }
+        .imgWrapper:hover{
+            >.member-img{
+                transform: scale(1.1);
+                transform-origin: center;
+            }
+        }
+    
+        .meta{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: .7rem 0;
+        }
+
+        .title{
+            padding: 0;
+            margin: 0;
+        }
+
+        .more{
+            p{
+               font-size: 1.1em; 
+            }
+        }
+    }
+}

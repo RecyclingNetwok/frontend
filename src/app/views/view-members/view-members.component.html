@@ -1,0 +1,21 @@
+<div class="members">
+    <div class="member-layout" *ngFor="let member of members">
+        <div class="member-layout showcase">
+            <div class="follow-section">
+                <span>{{member.name}}</span>
+                <button type="submit">
+                    <mat-icon>add</mat-icon> Suivre
+                </button>
+            </div>
+            <img [src]="'../../../../assets/images'+member.showcasePath" alt="">
+            <div class="overlay"></div>
+        </div>
+        <div class="member-layout profile">
+            <a class="pp" [routerLink]="'/tricks/'+member.id">
+                <img src="../../../../assets/images/login_ppmemb.svg" class="pp-path" alt="">
+                <span>{{member.name}}</span>
+            </a>
+            <span class="role">{{member.role}}</span>
+        </div>
+    </div>
+</div>

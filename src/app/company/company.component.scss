@@ -1,0 +1,193 @@
+@import '../../styles/colors';
+
+.company{
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    min-height: 100%;
+    .sidenav-wrapper{
+        flex-shrink: 0;
+        width: 280px;
+        flex: 0 0 auto;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        .sidenav-content{
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 280px;
+            position: fixed;
+            display: flex;
+            z-index: 1200;
+            flex: 1 0 auto;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            flex-direction: column;
+            background-color: $whitehd;
+            border-right: 1px dashed rgba(145, 158, 171, 0.24);
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+        .logo{
+            padding: 0 .4rem;
+            margin-top: .94rem;
+        }
+        .general,
+        .management{
+            margin: 0 .94rem .56rem .94rem;
+            .subheader{
+                top: 0;
+                left: 0;
+                z-index: 1200;
+                position: sticky;
+                font-size: .8rem;
+                font-family: 'Raleway';
+                font-weight: 600;
+                background-color: $whitehd;
+                backdrop-filter: blur(7px);
+                padding: 1rem .7rem .4rem .7rem;
+            }
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile{
+            margin: .8rem 1.4rem;
+            a{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: rgba(145, 158, 171, 0.12);
+                padding: .8rem;
+                font-size: .8rem;
+                border-radius: 14px;
+                .name-role{
+                    display: flex;
+                    padding: .42rem;
+                    align-items: left;
+                    justify-content: center;
+                    flex-direction: column;
+                    span{
+                        padding: .2rem 0;
+                    }
+                    span:first-child{
+                        font-size: .91rem;
+                        font-family: 'Montserrat';
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    .main-wrapper{
+        width: 100%;
+    }
+}
+
+a{padding: .98rem;}
+
+ul{
+    list-style-type: disc;
+    padding-inline-start: 24px;
+}
+
+::ng-deep{
+    .mat-list-base{
+        width: 100%;
+    }
+
+    .mat-list-item-content-reverse{
+        font-size: .86rem;
+        font-family: 'Poppins';
+    }
+
+    .mat-list-option{
+        margin: .21rem 0;
+        height: 2.8rem !important;
+        border-radius: 8px !important;
+        transition: .2s !important;
+    }
+
+    .mat-list-item-ripple{
+        border-radius: 8px;
+        transition: .7s !important;
+    }
+
+    .mat-list-item-ripple:active{
+        background-color: rgba(145, 158, 171, 0.12);
+    }
+
+    .mat-tree{
+        padding-top: 8px;
+        width: 100%;
+    }
+
+    .mat-ripple{
+        border-radius: 8px;
+    }
+
+    .mat-tree-node{
+        &[aria-expanded="false"]{
+            padding-left: 0 !important;
+        }
+    }
+
+    .mat-button-toggle-group{
+        border: none;
+        width: 100%;
+    }
+    
+    .mat-button-toggle-label-content{
+        font-size: .86rem;
+        line-height: normal;
+        padding: 0 !important;
+        height: 2.8rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .leaf-node.mat-ripple,
+    .mat-button-toggle{
+        width: 100%;
+        display: flex;
+        font-size: .86rem;
+        font-weight: 400;
+        align-items: center;
+        cursor: pointer;
+        justify-content: space-between;
+        border-radius: 8px;
+        padding:0 16px;
+        font-size: .8rem;
+        font-family: 'Poppins';
+        transition: .2s !important;
+        &:hover,&:active{
+            background-color: rgba(145, 158, 171, 0.12);
+        }
+
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            span{
+                padding: 0 16px;
+            }
+        }
+    }
+
+    .expandable-node{
+        .mat-button-toggle{
+        }
+    }
+
+    .leaf-node{
+        &.mat-ripple{
+            height: 2.4rem;
+        }
+    }
+}

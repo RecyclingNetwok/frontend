@@ -1,0 +1,67 @@
+<div class="household">
+    <div class="sidenav-wrapper">
+        <div class="sidenav-content">
+            <a routerLink="/" class="logo">
+                <img src="../../../assets/images/logo_frn.svg" height="100" alt="">
+            </a>
+            <div class="profile">
+                <a routerLink="/admin/account">
+                    <img src="../../../assets/images/login_ppmemb.svg" height="42" alt="">
+                    <div class="name-role">
+                        <span>{{username}}</span>
+                        <span>{{userType}}</span>
+                    </div>
+                </a>
+            </div>
+            <div class="general">
+                <div class="subheader">GENERAL</div>
+                <mat-selection-list [multiple]="false">
+                     <mat-list-option *ngFor="let item of generalItems" [value]="item.title">
+                        <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
+                        <a [routerLink]="'/household'+item.path">{{item.title}}</a>
+                    </mat-list-option>
+                </mat-selection-list>
+            </div>
+            <div class="management">
+                <div class="subheader">MANAGEMENT</div>
+                <mat-button-toggle-group>
+                    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                        <!-- This is the tree node template for leaf nodes -->
+                        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                            <div matRipple class="leaf-node">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span>{{node.name}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span></span>
+                            </div>
+                        </mat-tree-node>
+                        <!-- This is the tree node template for expandable nodes -->
+                        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+                            <mat-button-toggle 
+                                class="expandable-node"
+                                matTreeNodeToggle
+                                [attr.aria-label]="'Toggle ' + node.name">
+                                <div>
+                                    <mat-icon>{{node.icon}}</mat-icon>
+                                    <span>{{node.name}}</span>
+                                </div>
+                                <mat-icon>
+                                    {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                                </mat-icon>
+                            </mat-button-toggle>
+                        </mat-tree-node>
+                    </mat-tree>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <header-board></header-board>
+        <household-board *ngIf="router.url =='/household' || router.url =='/household/dashboard'"></household-board>
+        <footer-board></footer-board>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<form  
+  *ngIf="!isSuccessful"
+  #signupForm="ngForm" 
+  (ngSubmit)="onSubmit(signupForm)"
+  novalidate 
+>
+    <mat-card class="signup-card">
+      <mat-card-header>
+        <mat-card-title>Premiers pas sur FRN</mat-card-title>
+        <mat-card-subtitle>Veuillez vous connecter à votre compte et commencer l'aventure</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Autre</mat-label>
+              <input 
+                matInput 
+                type="text"
+                name="user_type"
+                [(ngModel)]="user.user_type"
+                required
+                #user_type="ngModel">
+              <mat-error>
+                Autre <strong>requis</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Pseudo</mat-label>
+              <input 
+                matInput 
+                type="text"
+                name="username"
+                [(ngModel)]="user.username"
+                required
+                #username="ngModel">
+              <mat-error>
+                Le pseudo est <strong>requis</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>E-mail</mat-label>
+              <input 
+                matInput 
+                type="email"
+                name="email"
+                [(ngModel)]="user.email"
+                required
+                #email="ngModel">
+              <mat-error>
+                L'E-mail est <strong>requis</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Mot de passe</mat-label>
+              <input 
+                matInput 
+                [type]="hide ? 'password' : 'text'"
+                name="password"
+                required
+                minlength="4"
+                #password="ngModel"
+                [(ngModel)]="user.password">
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error>
+                Le mot de passe est <strong>requis</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row" *ngIf="roles">
+          <div class="col">
+            <span>Vous êtes ?</span>
+            <ul>
+              <li *ngFor="let role of roles; let i = index"> 
+                <mat-checkbox
+                  [id]="'roles-'+i"
+                  value="{{role.id}}"
+                  [checked]="role.selected"
+                  (change)="updateSelectedRoles(i)">
+                  {{role.name}}
+                </mat-checkbox>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </mat-card-content>
+      <button 
+        mat-raised-button 
+        color="primary" 
+        type="submit"
+        [disabled]="!signupForm.valid">
+        S'inscrire
+      </button>
+      <mat-card-footer>
+        <mat-card-subtitle>
+          <p>Vous avez déjà un compte ?</p>
+          <a routerLink="/login">Connectez-vous ici</a>
+        </mat-card-subtitle>
+      </mat-card-footer>
+    </mat-card>
+</form>
+  

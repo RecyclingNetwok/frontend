@@ -1,0 +1,73 @@
+<form 
+  *ngIf="!isLoggedIn"
+  name="form"
+  novalidate 
+  #loginForm="ngForm" 
+  (ngSubmit)="loginForm.form.valid && onSubmit()">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Bienvenue sur FRN!</mat-card-title>
+      <mat-card-subtitle>{{status}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Pseudo</mat-label>
+            <input
+              ngModel
+              matInput  
+              type="text"
+              required
+              name="username" 
+              [(ngModel)]="form.username"
+              #email="ngModel"
+            >
+            <mat-error *ngIf="email.hasError('required')">
+              L'E-mail est requis <strong>requis</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Mot de passe</mat-label>
+            <input 
+              matInput 
+              [type]="hide ? 'password' : 'text'" 
+              required
+              name="password" 
+              [(ngModel)]="form.password" 
+              #password="ngModel"
+            >
+            <button 
+              type="button" 
+              mat-icon-button 
+              matSuffix 
+              (click)="hide = !hide" 
+              [attr.aria-label]="'Hide password'" 
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="password.hasError('required')">
+              Le mot de passe est <strong>requis</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-checkbox>Se souvenir de moi</mat-checkbox>
+    </mat-card-content>
+    <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Se connecter</button>
+    <mat-card-footer>
+      <mat-card-subtitle>
+        <p>Nouveau sur notre plateforme ?</p>
+        <a routerLink="/signup">Créer un compte</a>
+      </mat-card-subtitle>
+    </mat-card-footer>
+  </mat-card>
+</form>
+<div class="alert alert-success" *ngIf="isLoggedIn">
+  Logged in as {{ roles }}.
+</div>

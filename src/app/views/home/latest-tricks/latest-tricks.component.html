@@ -1,0 +1,21 @@
+<div class="tricks-header">
+    <h1>Astuces Récentes</h1>
+    <a routerLink="/tricks">Afficher tout</a>
+</div>
+<div class="tricks">
+    <div class="tricks-wrapper" *ngFor="let trick of latestTricks">
+        <div class="imgWrapper">
+            <span class="cat">{{trick.cat}}</span>
+            <img [src]="'../../../../assets/images'+trick.imgPath" class="tricks-img" [alt]="trick.title">
+        </div>
+        <div class="meta">
+            <span class="publisherName">{{trick.publisherName}}</span> |
+            <span class="date">{{trick.date}}</span>
+        </div>
+        <span class="title">{{trick.title}}</span>
+        <div class="more">
+            <p>{{trick.summary}}</p>
+            <a [routerLink]="trick.link">Lire plus</a>
+        </div>
+    </div>
+</div>

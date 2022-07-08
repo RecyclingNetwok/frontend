@@ -1,0 +1,7 @@
+<div class="partnership">
+    <div class="partnership-logo" *ngFor="let partner of partners">
+        <a routerLink="/">
+            <img [src]="'../../../../assets/images'+partner.logoPath" height="100" [alt]="partner.logoName">
+        </a>
+    </div>
+</div>

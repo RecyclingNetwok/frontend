@@ -1,0 +1,18 @@
+<footer 
+    *ngIf="
+        router.url !== '/login' && 
+        router.url !== '/signup' && 
+        router.url !== '/admin' &&
+        router.url !== '/admin/dashboard' &&
+        router.url !== '/admin/analytics' &&
+        router.url !== '/admin/users' &&
+        router.url !== '/company' &&
+        router.url !== '/company/dashboard' &&
+        router.url !== '/collector' &&
+        router.url !== '/collector/dashboard' &&
+        router.url !== '/household' &&
+        router.url !== '/household/dashboard' &&
+        router.url !== '/organization' &&
+        router.url !== '/organization/organization'">
+    <p><mat-icon>copyright</mat-icon> Copyright 2022 FRN. Tous droits reservés.</p>
+</footer>

@@ -1,0 +1,23 @@
+.cat{
+    height: 350px;
+    padding: 1.4rem 2.8rem;
+    width: 65%;
+    border-radius: 14px;
+    position: sticky;
+    top: 1rem;
+    box-shadow: 0 0 .7rem 0 rgba($color: #000000, $alpha: 0.1);
+    
+    &-header{
+        text-align: center;
+        font-size: medium;
+        font-weight: 500;
+    }
+
+    &-list{
+        padding-inline-start: 0;
+        li{
+            padding: .7rem 0;
+            list-style: none;
+        }
+    }
+}

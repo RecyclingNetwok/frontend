@@ -1,0 +1,206 @@
+<header>
+    <nav class="navbar">
+        <div class="navbar-wrapper">
+            <ul class="navbar-links login" *ngIf="userType=='Administrateur'">
+                <li>
+                    <mat-icon 
+                        matBadge="15" 
+                        matBadgeColor="accent"
+                        mat-icon-button
+                        [matMenuTriggerFor]="notifications">
+                        notifications
+                    </mat-icon>
+                </li>
+                <li>
+                    <button [matMenuTriggerFor]="menu" mat-icon-button>
+                        <img src="../../../assets/images/login_ppmemb.svg" height="42" alt="">
+                    </button>
+                    <mat-menu #messages="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #notifications="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #menu="matMenu" class="sub-menu">
+                        <div class="sub-menu header">
+                            <span>{{username}}</span>
+                            <span>{{email}}</span>
+                        </div>
+                        <div class="sub-menu items">
+                            <span mat-menu-item>Profil</span>
+                            <a routerLink="/admin/dashboard" mat-menu-item>Tableau de bord</a>
+                            <span mat-menu-item>Paramètres</span>
+                        </div>
+                        <div class="sub-menu footer">
+                            <a href (click)="logout()" mat-menu-item>
+                                Déconnexion
+                            </a>
+                        </div>
+                    </mat-menu>
+                </li>
+            </ul>
+            <ul class="navbar-links login" *ngIf="userType=='Menage'">
+                <li>
+                    <mat-icon 
+                        matBadge="15" 
+                        matBadgeColor="accent"
+                        mat-icon-button
+                        [matMenuTriggerFor]="notifications">
+                        notifications
+                    </mat-icon>
+                </li>
+                <li>
+                    <button [matMenuTriggerFor]="menu" mat-icon-button>
+                        <img src="../../../assets/images/login_ppmemb.svg" height="42" alt="">
+                    </button>
+                    <mat-menu #messages="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #notifications="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #menu="matMenu" class="sub-menu">
+                        <div class="sub-menu header">
+                            <span>{{username}}</span>
+                            <span>{{email}}</span>
+                        </div>
+                        <div class="sub-menu items">
+                            <span mat-menu-item>Profil</span>
+                            <a routerLink="/household/dashboard" mat-menu-item>Tableau de bord</a>
+                            <span mat-menu-item>Paramètres</span>
+                        </div>
+                        <div class="sub-menu footer">
+                            <a href (click)="logout()" mat-menu-item>
+                                Déconnexion
+                            </a>
+                        </div>
+                    </mat-menu>
+                </li>
+            </ul>
+            <ul class="navbar-links login" *ngIf="userType=='Collecteur'">
+                <li>
+                    <mat-icon 
+                        matBadge="15" 
+                        matBadgeColor="accent"
+                        mat-icon-button
+                        [matMenuTriggerFor]="notifications">
+                        notifications
+                    </mat-icon>
+                </li>
+                <li>
+                    <button [matMenuTriggerFor]="menu" mat-icon-button>
+                        <img src="../../../assets/images/login_ppmemb.svg" height="42" alt="">
+                    </button>
+                    <mat-menu #messages="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #notifications="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #menu="matMenu" class="sub-menu">
+                        <div class="sub-menu header">
+                            <span>{{username}}</span>
+                            <span>{{email}}</span>
+                        </div>
+                        <div class="sub-menu items">
+                            <span mat-menu-item>Profil</span>
+                            <a routerLink="/collector/dashboard" mat-menu-item>Tableau de bord</a>
+                            <span mat-menu-item>Paramètres</span>
+                        </div>
+                        <div class="sub-menu footer">
+                            <a href (click)="logout()" mat-menu-item>
+                                Déconnexion
+                            </a>
+                        </div>
+                    </mat-menu>
+                </li>
+            </ul>
+            <ul class="navbar-links login" *ngIf="userType=='Organisation'">
+                <li>
+                    <mat-icon 
+                        matBadge="15" 
+                        matBadgeColor="accent"
+                        mat-icon-button
+                        [matMenuTriggerFor]="notifications">
+                        notifications
+                    </mat-icon>
+                </li>
+                <li>
+                    <button [matMenuTriggerFor]="menu" mat-icon-button>
+                        <img src="../../../assets/images/login_ppmemb.svg" height="42" alt="">
+                    </button>
+                    <mat-menu #messages="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #notifications="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #menu="matMenu" class="sub-menu">
+                        <div class="sub-menu header">
+                            <span>{{username}}</span>
+                            <span>{{email}}</span>
+                        </div>
+                        <div class="sub-menu items">
+                            <span mat-menu-item>Profil</span>
+                            <a routerLink="/organization/dashboard" mat-menu-item>Tableau de bord</a>
+                            <span mat-menu-item>Paramètres</span>
+                        </div>
+                        <div class="sub-menu footer">
+                            <a href (click)="logout()" mat-menu-item>
+                                Déconnexion
+                            </a>
+                        </div>
+                    </mat-menu>
+                </li>
+            </ul>
+            <ul class="navbar-links login" *ngIf="userType=='Entreprise'">
+                <li>
+                    <mat-icon 
+                        matBadge="7" 
+                        matBadgeColor="warn"
+                        mat-icon-button
+                        [matMenuTriggerFor]="messages">
+                        messages 
+                    </mat-icon>
+                </li>
+                <li>
+                    <mat-icon 
+                        matBadge="15" 
+                        matBadgeColor="accent"
+                        mat-icon-button
+                        [matMenuTriggerFor]="notifications">
+                        notifications
+                    </mat-icon>
+                </li>
+                <li>
+                    <button [matMenuTriggerFor]="menu" mat-icon-button>
+                        <img src="../../../assets/images/login_ppmemb.svg" height="42" alt="">
+                    </button>
+                    <mat-menu #messages="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #notifications="matMenu">
+
+                    </mat-menu>
+                    <mat-menu #menu="matMenu" class="sub-menu">
+                        <div class="sub-menu header">
+                            <span>{{username}}</span>
+                            <span>{{email}}</span>
+                        </div>
+                        <div class="sub-menu items">
+                            <span mat-menu-item>Profil</span>
+                            <a routerLink="/company/dashboard" mat-menu-item>Tableau de bord</a>
+                            <span mat-menu-item>Paramètres</span>
+                        </div>
+                        <div class="sub-menu footer">
+                            <a href (click)="logout()" mat-menu-item>
+                                Déconnexion
+                            </a>
+                        </div>
+                    </mat-menu>
+                </li>
+            </ul>   
+        </div>
+    </nav>
+</header>
+ 

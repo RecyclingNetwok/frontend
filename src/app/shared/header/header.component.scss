@@ -1,0 +1,128 @@
+@import '../../../styles/colors';
+
+header{
+    position: relative;
+    font-size: .91rem;
+    font-weight: 400;
+    .navbar{
+        display: flex;
+        margin: 0;
+        align-items: center;
+        padding: .5rem 1.6rem;
+        background-color: $whitehd;
+        backdrop-filter: blur(7px);
+
+        &-logo{
+            display: block;
+        }
+
+        &-wrapper{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-links{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            &.more{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                & li:first-child mat-icon{
+                    color: rgb(14, 150, 14);
+                    padding: .5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 0 .21rem 0 rgba($color: #000000, $alpha: 0.1);
+                }
+                & li:last-child{
+                    border-radius: 14px;
+                    padding: .5rem 0;
+                    font-size: .84rem;
+                    font-weight: 500;
+                    background-color: rgb(41, 194, 41);
+                    a{
+                        color: white;
+                    }
+                }
+            }
+            &.login{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                li{
+                    padding: 0 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+     
+    li>a{
+        display: flex;
+        padding: 0 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+::ng-deep {
+    .mat-elevation-z4{
+        box-shadow: 
+            rgb(145 158 171 / 24%) 0px 0px 2px 0px, 
+            rgb(145 158 171 / 24%) -20px 20px 40px -4px;
+    }
+    .mat-menu-panel{
+        border-radius: 10px !important;
+    }
+    .mat-menu-panel::-webkit-scrollbar, 
+    .mat-menu-content::-webkit-scrollbar{
+        display: none;
+    }
+    .mat-menu-content{
+        padding: 0 !important;
+        font-size: .86rem;
+        width: 195px;
+        font-family: 'Poppins';
+        .sub-menu{
+            &.header,&.footer{
+                display: flex;
+                padding: .4rem;
+                align-items: left;
+                justify-content: center;
+                flex-direction: column;
+            }
+            &.header{
+                padding: .4rem;
+                border-bottom: 1px solid rgba($color: #aaa, $alpha: 0.1);
+                span{
+                    padding: .14rem 10px;
+                }
+                span:first-child{
+                    font-size: .91rem;
+                    font-family: 'Montserrat';
+                    font-weight: 600;
+                }
+            }
+            &.items{
+                padding: .7rem;
+            }
+            &.footer{
+                border-top: 1px solid rgba($color: #aaa, $alpha: 0.1);
+            }
+        }
+    }
+    .mat-menu-item{
+        font-size: .86rem;
+        font-family: 'Poppins';
+        height: auto !important;
+        line-height: unset !important;
+        padding: 10px !important;
+        border-radius: .4rem;
+    }
+}

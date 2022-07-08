@@ -1,0 +1,147 @@
+.members-header{
+    margin: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1{
+        font-size: 1.6rem;
+        font-weight: 700;
+    }    
+    a{
+        color: #fff;
+        font-size: .86rem;
+        font-weight: 500;
+        padding: .7rem;
+        border-radius: 50px;
+        background-color: rgb(23, 189, 23);
+    }
+}
+.members{
+    display: grid;
+    gap: 2.4rem;
+    margin: 3.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    .member{
+        &-layout{
+            &.showcase{
+                display: flex;
+                overflow: hidden;
+                height: max-content;
+                border-radius: 14px;
+                position: relative;
+                box-shadow: 0 0 .2rem 0 rgba($color: #000000, $alpha: 0.1);
+                .follow-section{
+                    left: 0;
+                    right: 0;
+                    color: white;
+                    bottom: -4rem;
+                    padding: .5rem 2rem;
+                    display: flex;
+                    z-index: 4;
+                    transition: .3s;
+                    align-items: center;
+                    justify-content: space-between;
+                    position: absolute;
+                    span{
+                        font-weight: 700;
+                        text-shadow: 0 0 2.8px rgba($color: #000000, $alpha: 0.8);
+                    }
+                    button{
+                        border: none;
+                        border-radius: 8px;
+                        padding: .35rem .4rem;
+                        display: flex;
+                        z-index: 3;
+                        font-weight: 500;
+                        font-size: .86rem;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: white;
+                    }
+                }
+                .overlay{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 2;
+                    opacity: 0;
+                    transition: .3s;
+                    background: linear-gradient(
+                        180deg, 
+                        transparent 62%, 
+                        rgba(0,0,0,0.00345888) 63.94%, 
+                        rgba(0,0,0,0.014204) 65.89%, 
+                        rgba(0,0,0,0.0326639) 67.83%, 
+                        rgba(0,0,0,0.0589645) 69.78%, 
+                        rgba(0,0,0,0.0927099) 71.72%, 
+                        rgba(0,0,0,0.132754) 73.67%, 
+                        rgba(0,0,0,0.177076) 75.61%, 
+                        rgba(0,0,0,0.222924) 77.56%, 
+                        rgba(0,0,0,0.267246) 79.5%, 
+                        rgba(0,0,0,0.30729) 81.44%, 
+                        rgba(0,0,0,0.341035) 83.39%, 
+                        rgba(0,0,0,0.367336) 85.33%, 
+                        rgba(0,0,0,0.385796) 87.28%, 
+                        rgba(0,0,0,0.396541) 89.22%, 
+                        rgba(0,0,0,0.4) 91.17%);;
+                }
+                &:after{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    opacity: 0;
+                    display: block;
+                    content: "";
+                    transition: .3s;
+                    pointer-events: none;
+                    background: linear-gradient(
+                        to bottom, 
+                        transparent 10%,
+                        rgba(130, 124, 124, 0.4) 100%,
+                        );
+                }
+                &:hover>.follow-section{
+                    bottom: 1rem;
+                }
+                &:hover .overlay{
+                    opacity: 1;
+                }
+                &:hover:after{
+                    opacity: 1;
+                }
+                img{
+                    width: 100%;
+                    background-size: cover;
+                }
+            }
+            &.profile,.pp{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .pp{
+                    margin: .4rem 0;
+                    span{
+                        padding: 0 .7rem;
+                    }
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50px;
+                    }
+                }
+            }
+            .role{
+                color: white;
+                background-color: rgb(22, 180, 22);
+                padding: .28rem;
+                font-size: .8rem;
+                font-weight: 500;
+                border-radius: 5px;
+            }
+        }
+    }
+}

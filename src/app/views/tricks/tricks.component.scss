@@ -1,0 +1,10 @@
+.tricks{  
+    display: flex;
+    flex-direction: column;
+    .main-wrapper{
+        display: grid;
+        position: relative;
+        margin: auto 1.4rem;
+        grid-template-columns: 75% 25%;
+    }
+}

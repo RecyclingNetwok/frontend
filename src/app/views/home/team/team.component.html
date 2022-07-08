@@ -1,0 +1,12 @@
+<h1>Members Team</h1>
+<div class="team">
+    <div class="team-member" *ngFor="let member of team">
+        <div class="imgWrapper">
+            <img [src]="'../../../../assets/images'+member.profilePath" height="320" width="180" class="member-img" [alt]="">
+        </div>
+        <div class="meta">
+            <span class="name">{{member.name}}</span>
+            <span class="role">{{member.role}}</span>
+        </div>
+    </div>
+</div>
